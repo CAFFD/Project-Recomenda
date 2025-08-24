@@ -1,4 +1,4 @@
-# Documentação de Arquitetura - App Zeladoria Urbana
+# Documentação de Arquitetura - App Recomenda
 Este documento descreve a arquitetura do aplicativo seguindo o Modelo C4.
 
 ## Nível 1: Diagrama de Contexto do Sistema
