@@ -1,0 +1,20 @@
+{
+	"name": "Zeladoria Urbana - Backend",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace/backend",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"prisma.prisma",
+				"humao.rest-client"
+			]
+		}
+	},
+
+	"postCreateCommand": "npm install"
+}

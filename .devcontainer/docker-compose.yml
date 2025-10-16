@@ -1,0 +1,39 @@
+services:
+  # O nosso serviço da aplicação Node.js
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    
+    # Mantém o container a correr
+    command: sleep infinity
+
+    # Mapeia a pasta do nosso projeto para dentro do container
+    volumes:
+      - ..:/workspace:cached
+    
+    # Expõe a porta 3000 (do Fastify) para o nosso computador
+    ports:
+      - 3000:3000
+
+  # O nosso serviço do banco de dados PostgreSQL
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    
+    # Mapeia uma pasta local para guardar os dados do BD
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    
+    # Expõe a porta do PostgreSQL
+    ports:
+      - 5432:5432
+      
+    # Variáveis de ambiente para o banco de dados
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=appdb
+
+volumes:
+  postgres-data:
