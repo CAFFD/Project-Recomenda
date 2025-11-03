@@ -8,7 +8,7 @@ Diagrama que mostra a visão geral do sistema, seus usuários e as interações 
 graph TD
     subgraph "Ecossistema"
         A(Cidadão) -- Reporta problemas via --> B[App Recomenda];
-        B -- Envia ocorrências para --> C[Sistema da Prefeitura];
+        B -- Envia ocorrências para --> C[Prefeitura];
     end
 
     %% Estilização
@@ -27,7 +27,7 @@ graph TD
     subgraph "Sistema"
         U(Cidadão) -- Usa --> A;
         A(App Mobile em React Native) -->|Envia requisições| B(API Backend em Node.js);
-        B -->|Lê e escreve| C[(Banco de Dados PostgreSQL)];
+        B -->|Lê e escreve| C[(Banco de Dados Firebase)];
     end
 
     %% Estilização
